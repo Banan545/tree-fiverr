@@ -340,11 +340,11 @@ function bindModule(module) {
   } // Subscribe to front-end destroy event
 
 
-  isFunction(module.destroy) && $win.on('__wf_destroy', module.destroy); // Look for ready method on module
+  //isFunction(module.destroy) && $win.on('__wf_destroy', module.destroy); // Look for ready method on module
 
-  if (module.ready && isFunction(module.ready)) {
+  /*if (module.ready && isFunction(module.ready)) {
     addReady(module);
-  }
+  }*/
 }
 
 function addReady(module) {
@@ -463,8 +463,8 @@ Webflow.validClick = touch ? function (clickTarget) {
 
 var resizeEvents = 'resize.webflow orientationchange.webflow load.webflow';
 var scrollEvents = 'scroll.webflow ' + resizeEvents;
-Webflow.resize = eventProxy($win, resizeEvents);
-Webflow.scroll = eventProxy($win, scrollEvents);
+//Webflow.resize = eventProxy($win, resizeEvents);
+//Webflow.scroll = eventProxy($win, scrollEvents);
 Webflow.redraw = eventProxy(); // Create a proxy instance for throttled events
 
 function eventProxy(target, types) {
@@ -543,7 +543,7 @@ Webflow.ready = function () {
   _.each(secondary, callReady); // Trigger resize
 
 
-  Webflow.resize.up();
+  //Webflow.resize.up();
 };
 
 function callReady(readyFn) {
@@ -576,7 +576,7 @@ function bindLoad() {
 
 
   deferLoad = new $.Deferred();
-  $win.on('load', deferLoad.resolve);
+  //$win.on('load', deferLoad.resolve);
 } // Webflow.destroy - Trigger a destroy event for all modules
 
 
